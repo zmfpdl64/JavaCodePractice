@@ -91,7 +91,9 @@ fabric.properties
 
 ### Java ###
 # Compiled class file
+out/*.class
 *.class
+*.xml
 
 # Log file
 *.log
@@ -137,8 +139,10 @@ $RECYCLE.BIN/
 *.msix
 *.msm
 *.msp
-
 # Windows shortcuts
 *.lnk
+
+# java
+
 
 # End of https://www.toptal.com/developers/gitignore/api/java,windows,intellij+all

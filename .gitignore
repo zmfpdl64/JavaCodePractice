@@ -91,7 +91,7 @@ fabric.properties
 
 ### Java ###
 # Compiled class file
-out/*.class
+out/*
 *.class
 *.xml
 

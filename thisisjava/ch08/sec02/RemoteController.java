@@ -1,5 +1,6 @@
 package thisisjava.ch08.sec02;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public interface RemoteController {
@@ -8,7 +9,7 @@ public interface RemoteController {
     public void turnOn();
     public void turnOff();
     public void setVolume(int volume);
-    
+
     private void printMessage(){
         System.out.println("기본 메시지 출력");
     }
@@ -21,7 +22,7 @@ public interface RemoteController {
         System.out.println("아무거나 출력");
     }
 
-    default void Mute(boolean mute) {
+    public default void Mute(boolean mute) {
         if(mute) {
             System.out.println("무음 처리합니다.");
             setVolume(MIN_VOLUME);

@@ -1,6 +1,6 @@
-import java.util.ArrayList;
+package JavaPractice;
+
 import java.util.Arrays;
-import java.util.Collections;
 //연속적으로 연결이 안될 수도 있음
 
 public class overlap {

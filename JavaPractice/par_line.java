@@ -1,3 +1,5 @@
+package JavaPractice;
+
 import java.util.HashMap;
 
 public class par_line {

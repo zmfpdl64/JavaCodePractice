@@ -1,4 +1,5 @@
-import java.util.*;
+package JavaPractice;
+
 import java.io.*;
 
 public class test {

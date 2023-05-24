@@ -1,5 +1,5 @@
-import java.util.ArrayList;
-import java.util.Arrays;
+package JavaPractice;
+
 import java.util.HashMap;
 import java.util.stream.IntStream;
 

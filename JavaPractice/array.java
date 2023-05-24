@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+package JavaPractice;
+
 import java.util.Arrays;
 import java.util.stream.IntStream;
 

@@ -1,3 +1,5 @@
+package JavaPractice;
+
 import java.util.stream.IntStream;
 
 public class num_bro3 {

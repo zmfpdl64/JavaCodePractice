@@ -24,7 +24,7 @@ public class 카드게임 {
         lists.add(new Myobj(2, 1, "5"));
         lists.add(new Myobj(2, 3, "6"));
         lists.sort(Comparator.comparing(o -> o.a));
-        lists.sort(Comparator.comparing((Myobj o) -> o.a).reversed()
+        lists.sort(Comparator.comparing((Myobj  o) -> o.a).reversed()
                 .thenComparing(Comparator.comparing((Myobj o) -> o.b).reversed())
                 .thenComparing((o1, o2) ->
                         o2.c.toLowerCase().compareTo(o1.c.toLowerCase())

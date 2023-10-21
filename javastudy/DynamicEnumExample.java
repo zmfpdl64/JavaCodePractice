@@ -30,14 +30,14 @@ public class DynamicEnumExample {
 
     public static void createEnum(String enumClassName, String[] enumValues) {
         // Enum 클래스 템플릿 코드 생성
-        String builder = """
-                package javastudy;
-                public enum %s {
-                    %s,
-                    %s,
-                    %s;
-                }
-                """.formatted(enumClassName, enumValues[0],enumValues[1], enumValues[2] );
+//        String builder = """
+//                package javastudy;
+//                public enum %s {
+//                    %s,
+//                    %s,
+//                    %s;
+//                }
+//                """.formatted(enumClassName, enumValues[0],enumValues[1], enumValues[2] );
 //        StringBuilder enumCode = new StringBuilder();
 //        enumCode.append("public enum ").append(enumClassName).append(" {\n");
 
@@ -53,7 +53,7 @@ public class DynamicEnumExample {
         // 동적으로 생성한 Enum 클래스를 Java 파일로 출력
         try {
             PrintWriter writer = new PrintWriter("javastudy/" + enumClassName + ".java");
-            writer.println(builder);
+//            writer.println(builder);
         }
         catch (FileNotFoundException e) {
             e.printStackTrace();

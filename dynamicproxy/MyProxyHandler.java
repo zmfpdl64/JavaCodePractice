@@ -1,5 +1,7 @@
 package dynamicproxy;
 
+import java.lang.annotation.Annotation;
+import java.lang.annotation.Target;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
@@ -9,20 +11,20 @@ public class MyProxyHandler implements InvocationHandler {
     public MyProxyHandler(Object target) {
         this.target = target;
     }
-
-
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println("========측정 시작==========");
-        long startTime = System.nanoTime();
+        if(method.isAnnotationPresent(TargetAnotation.class)){
+            System.out.println("========측정 시작==========");
+            long startTime = System.nanoTime();
 
-        Object result = method.invoke(target, args);
+            Object result = method.invoke(target, args);
 
-        long endTime = System.nanoTime();
-        long resultTime = endTime - startTime;
-        System.out.println("로깅 :"+ resultTime + " ns");
-        System.out.println("===========측정 종료===========");
-
-        return result;
+            long endTime = System.nanoTime();
+            long resultTime = endTime - startTime;
+            System.out.println("로깅 :"+ resultTime + " ns");
+            System.out.println("===========측정 종료===========");
+            return result;
+        }
+        return method.invoke(target, args);
     }
 }

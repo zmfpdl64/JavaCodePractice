@@ -43,12 +43,7 @@ public class 석유시추 {
                 }
             }
         }
-        for(int o : oils){
-            if(answer < o){
-                answer = o;
-            }
-        }
-        return answer;
+        return Arrays.stream(oils).max().getAsInt();
     }
 
     public static boolean isOkRange(int[][] land, int nx, int ny) {

@@ -5,34 +5,24 @@ import java.util.function.Supplier;
 
 public class Teststs {
     public static void main(String[] args) {
+        for(int i = 0; i < 1_000_000; i++) {
+            System.out.print(1_000_000 + " ,");
+        }
 
-        String[] strings = new String[] {"1", "2", "3"};
-        Integer[] ints = Arrays.stream(strings).mapToInt(Integer::valueOf).boxed().toArray(Integer[]::new);
-        Arrays.stream(ints).forEach(System.out::println);
+    }
+}
 
-        Runnable run = new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("run");
-            }
-        };
-        run.run();
-        Supplier<String> supplier = new Supplier<>() {
-            @Override
-            public String get() {
-                return "get";
-            }
-        };
-
-
-
-        new Function<String, String>() {
-            @Override
-            public String apply(String s) {
-                return null;
-            }
-        };
-
-
+interface  A {
+    void test();
+}
+class AChild implements A{
+    public void test() {
+        System.out.println("i'm Achild");
+    }
+}
+class BChild implements A{
+    @Override
+    public void test() {
+        System.out.println("i'm BChild");
     }
 }

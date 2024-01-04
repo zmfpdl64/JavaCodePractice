@@ -71,12 +71,12 @@ public class K번째수 {
         return array;
     }
     public static int[] mergeSort(int[] array) {
-        partition(array, 0, array.length);
+        int[] newArray = Arrays.copyOf(array, array.length);
+        partition(array, newArray, 0, array.length);
         return array;
     }
-    static void merge(int[] array, int left, int right) {
-        int[] copyArray = new int[array.length];
-        for(int i = 0; i < right; i++) {
+    static void merge(int[] array, int[] copyArray, int left, int right) {
+        for(int i = 0; i < array.length; i++){
             copyArray[i] = array[i];
         }
         int mid = (left + right) / 2;
@@ -84,24 +84,24 @@ public class K번째수 {
         int tRight = mid + 1;
         int curIdx = left;
 
-        while(tLeft <= mid && tRight <= right) {
+        while(tLeft < mid && tRight < right) {
             if(copyArray[tLeft] <= copyArray[tRight]){
                 array[curIdx++] = copyArray[tLeft++];
             }else{
                 array[curIdx++] = copyArray[tRight++];
             }
         }
-        int remain = mid - tLeft;
-        for(int i = 0; i < remain; i++) {
-            array[curIdx + i] = copyArray[tLeft + i];
-        }
+//        int remain = mid - tLeft;
+//        for(int i = 0; i < remain; i++) {
+//            array[curIdx + i] = copyArray[tLeft + i];
+//        }
     }
-    static void partition(int[] array, int left, int right) {
+    static void partition(int[] array, int[] newArray, int left, int right) {
         if(left < right){
             int mid = (left + right) / 2;
-            partition(array, left, mid);
-            partition(array, mid+1, right);
-            merge(array, left, right);
+            partition(array, newArray, left, mid);
+            partition(array, newArray, mid+1, right);
+            merge(array, newArray, left, right);
         }
     }
 }

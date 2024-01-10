@@ -5,9 +5,9 @@ import java.util.stream.*;
 
 public class 체육복 {
     public static void main(String[] args) {
-//        solution(5, new int[]{2, 4}, new int[] {1,3,5});
+        solution(5, new int[]{2, 4}, new int[] {1,3,5});
         solution2(8, new int[]{2,3,6,7}, new int[] {1,4,5,8});
-//        solution2(5, new int[]{2,3,4}, new int[] {2,4});
+        solution2(5, new int[]{2,3,4}, new int[] {2,4});
     }
     public static int solution(int n, int[] lost, int[] reserve) {
         int answer = 0;

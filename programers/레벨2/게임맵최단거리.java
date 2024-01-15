@@ -29,6 +29,10 @@ public class 게임맵최단거리 {
             int t = cur[0];
             int x = cur[1];
             int y = cur[2];
+            if(x == maps.length-1 && y == maps.length-1){
+
+                break;
+            }
             for(int[] nex: move){
                 int nx = x + nex[0];
                 int ny = y + nex[1];
@@ -38,6 +42,8 @@ public class 게임맵최단거리 {
                 }
             }
         }
+
+
         int answer = maps[maps.length-1][maps[0].length-1];
         if(maps.length == 1 && maps[0].length == 1){
             return 1;
